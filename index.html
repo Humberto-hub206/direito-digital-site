@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies, Dados e Marketing Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Cookies, Bancos de Dados e Marketing Digital</h1>
+    <p>Simulações práticas aplicadas ao Direito Digital e à LGPD</p>
+</header>
+
+<nav>
+    <a href="#aviso">Aviso</a>
+    <a href="#cookies">Cookies</a>
+    <a href="#banco">Banco de Dados</a>
+    <a href="#marketing">Marketing</a>
+    <a href="#analise">Análise Jurídica</a>
+</nav>
+
+<section id="aviso">
+    <h2>ℹ️ Aviso Acadêmico</h2>
+    <p>
+        Este site possui finalidade exclusivamente educacional.
+        Todas as funcionalidades representam simulações do
+        funcionamento de cookies, bancos de dados e marketing
+        eletrônico, sem coleta real de dados pessoais.
+    </p>
+</section>
+
+<section id="cookies">
+    <h2>🍪 Cookies</h2>
+
+    <p>
+        Cookies são pequenos arquivos armazenados no navegador do usuário
+        para registrar preferências e informações de navegação.
+        No Direito Digital, seu uso depende de consentimento.
+    </p>
+
+    <h3>Simulação de Consentimento</h3>
+    <button onclick="aceitarCookies()">Aceitar cookies</button>
+    <button onclick="recusarCookies()">Recusar cookies</button>
+
+    <h3>Simulação de Cookies</h3>
+
+    <label for="nomeUsuario">Digite seu nome:</label><br>
+    <input type="text" id="nomeUsuario">
+    <br><br>
+
+    <button onclick="salvarCookie()">Salvar dado</button>
+    <button onclick="mostrarCookie()">Mostrar cookies</button>
+
+    <p id="resultado-cookie"></p>
+
+    <p class="base-legal">
+        <strong>Base legal:</strong>
+        <a onclick="abrirModal('cookies')">
+            Consentimento do titular (art. 7º, I, LGPD)
+        </a>
+    </p>
+
+</section>
+
+<section id="banco">
+    <h2>🗄️ Banco de Dados</h2>
+
+    <p>
+        Bancos de dados armazenam informações pessoais de forma estruturada.
+        Esses dados possuem valor econômico e exigem proteção jurídica.
+    </p>
+    <h3>Simulação de Banco de Dados</h3>
+
+    <label>Nome:</label><br>
+    <input type="text" id="bd-nome"><br><br>
+
+    <label>E-mail:</label><br>
+    <input type="email" id="bd-email"><br><br>
+
+    <label>Área de interesse:</label><br>
+    <input type="text" id="bd-interesse"><br><br>
+
+    <button onclick="salvarBanco()">Salvar no banco</button>
+    <button onclick="consultarBanco()">Consultar banco</button>
+
+    <p id="resultado-banco"></p>
+
+    <h3 class="alerta">🚨 SIMULAÇÃO DE VAZAMENTO DE DADOS</h3>
+
+    <button class="botao-alerta" onclick="simularVazamentoReal()">
+        Simular vazamento
+    </button>
+
+    <div id="vazamento-area"></div>
+
+    <p class="base-legal">
+        <strong>Base legal:</strong>
+        <a onclick="abrirModal('banco')">
+            Princípios da finalidade e necessidade (arts. 6º e 7º, LGPD)
+        </a>
+    </p>
+
+</section>
+
+<section id="marketing">
+    <h2>📢 Marketing Eletrônico</h2>
+
+    <p>
+        O marketing digital utiliza dados pessoais para personalizar anúncios.
+        Esse uso depende de consentimento e transparência.
+    </p>
+
+    <h3>Simulação de Marketing Eletrônico</h3>
+    <button onclick="mostrarMarketing()">Ver anúncio personalizado</button>
+
+    <p id="resultado-marketing"></p>
+
+    <p class="base-legal">
+        <strong>Base legal:</strong>
+        <a onclick="abrirModal('marketing')">
+            Consentimento para finalidade publicitária
+        </a>
+    </p>
+
+</section>
+
+<section id="analise">
+    <h2>📚 Análise Jurídica do Projeto</h2>
+    <p>
+        O site demonstra, de forma prática, como o tratamento de dados pessoais
+        depende de consentimento, finalidade e base legal.
+    </p>
+    <p>
+        A ausência de consentimento impede o armazenamento, o acesso
+        e o uso econômico dos dados, reforçando os princípios da LGPD.
+    </p>
+
+    <h3>📊 Painel de Tratamento de Dados</h3>
+    <ul>
+        <li id="status-consentimento"></li>
+        <li id="status-cookie"></li>
+        <li id="status-banco"></li>
+    </ul>
+
+    <button onclick="atualizarPainel()">Atualizar painel</button>
+</section>
+
+<div id="modal-legal" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <h3 id="modal-titulo"></h3>
+        <p id="modal-texto"></p>
+    </div>
+</div>
+
+<footer>
+    <p>Trabalho acadêmico – Direito Digital</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
