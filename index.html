@@ -1,180 +1,189 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Cookies, Dados e Marketing Digital</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cookies, Dados e Marketing Digital</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-<header>
-    <h1>Cookies, Bancos de Dados e Marketing Digital</h1>
-    <p>Simulações práticas aplicadas ao Direito Digital e à LGPD</p>
-</header>
+    <header>
+        <h1>Cookies, Bancos de Dados e Marketing Digital</h1>
+        <p>Simulações práticas aplicadas ao Direito Digital e à LGPD</p>
+    </header>
 
-<nav>
-    <a href="#aviso">Aviso</a>
-    <a href="#internet">Como se opera a internet</a>
-    <a href="#cookies">Cookies</a>
-    <a href="#banco">Banco de Dados</a>
-    <a href="#marketing">Marketing</a>
-    <a href="#analise">Análise Jurídica</a>
-</nav>
+    <nav>
+        <a href="#aviso">Aviso</a>
+        <a href="#internet">Como se opera a internet</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#banco">Banco de Dados</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#analise">Análise Jurídica</a>
+    </nav>
 
-<section id="aviso">
-    <h2>ℹ️ Aviso Acadêmico</h2>
-    <p>
-        Este site possui finalidade exclusivamente educacional.
-        Todas as funcionalidades representam simulações do
-        funcionamento de cookies, bancos de dados e marketing
-        eletrônico, sem coleta real de dados pessoais. Esse Trabalho aborda o tema "Como se opera a internet", com foco nos cookies, bancos de dados e marketing eletrônico, dentro do contexto do Direito Digital, considerando os aspectos técnicos e jurídicos do tratamento de dados pessoais.
-    </p>
-</section>
+    <section id="aviso">
+        <h2>ℹ️ Aviso Acadêmico</h2>
+        <p>
+            Este site possui finalidade exclusivamente educacional.
+            Todas as funcionalidades representam simulações do
+            funcionamento de cookies, bancos de dados e marketing
+            eletrônico, sem coleta real de dados pessoais. Esse Trabalho aborda o tema "Como se opera a internet", com foco nos cookies, bancos de dados e marketing eletrônico, dentro do contexto do Direito Digital, considerando os aspectos técnicos e jurídicos do tratamento de dados pessoais.
+        </p>
+    </section>
 
-<section id="internet">
-    <h2>🌐 Como se opera a internet</h2>
-    <p>
-        A internet é uma rede global de computadores interconectados que permite a comunicação e troca de informações.
-        Ela funciona com base em protocolos como TCP/IP, DNS e HTTP, que permitem a navegação e o acesso a conteúdos online.
-        A funciona como uma grande rede de computadores, onde o navegador envia uma requisição, o servidor processa e retorna as informações solicitadas, permitindo o acesso ao conteúdo digital requisitado.
-        O espaço virtual transformou as relações sociais, econômicas e jurídicas. Atividades cotidianas no ambiente digital envolvem o tratamento de dados pessoais, o que torna essencial a atuação do direito 
-        digital na proteção da privacidade e dos direitos fundamentais dos usuários.
-    </p>
-</section>
-<section id="cookies">
-    <h2>🍪 Cookies</h2>
+    <section id="internet">
+        <h2>🌐 Como se opera a internet</h2>
+        <p>
+            A internet é uma rede global de computadores interconectados que permite a comunicação e troca de informações.
+            Ela funciona com base em protocolos como TCP/IP, DNS e HTTP, que permitem a navegação e o acesso a conteúdos online.
+            A funciona como uma grande rede de computadores, onde o navegador envia uma requisição, o servidor processa e retorna as informações solicitadas, permitindo o acesso ao conteúdo digital requisitado.
+            O espaço virtual transformou as relações sociais, econômicas e jurídicas. Atividades cotidianas no ambiente digital envolvem o tratamento de dados pessoais, o que torna essencial a atuação do direito 
+            digital na proteção da privacidade e dos direitos fundamentais dos usuários.
+        </p>
+    </section>
+    <section id="cookies">
+        <h2>🍪 Cookies</h2>
 
-    <p>
-        Cookies são pequenos arquivos armazenados no navegador do usuário, utilizados para registrar 
-        informações da navegação, preferências e atividades online. Eles permitem personalizar a experiência do usuário, mas também levantam questões de privacidade e consentimento. 
-        Além disso, existem diferentes cookies que desempenham funções distintas com relação aos dados que foram armazenados.
+        <p>
+            Cookies são pequenos arquivos armazenados no navegador do usuário, utilizados para registrar 
+            informações da navegação, preferências e atividades online. Eles permitem personalizar a experiência do usuário, mas também levantam questões de privacidade e consentimento. 
+            Além disso, existem diferentes cookies que desempenham funções distintas com relação aos dados que foram armazenados.
+            <ul>
+                <li>Cookies essenciais: garantem o funcionamento do site.</li>
+                <li>Cookies de preferência: armazenam preferências do usuário.</li>
+                <li>Cookies de análise: coletam dados sobre o comportamento do usuário.</li>
+            </ul>
+                O uso de cookies depende do consentimento do usuário, conforme previsto na Lei Geral de Proteção de Dados (LGPD), e deve ser transparente quanto à finalidade e ao tratamento dos dados coletados.
+        </p>
+
+        <h3>Simulação de Consentimento</h3>
+        <button onclick="aceitarCookies()">Aceitar cookies</button>
+        <button onclick="recusarCookies()">Recusar cookies</button>
+
+        <h3>Simulação de Cookies</h3>
+
+        <label for="nomeUsuario">Digite seu nome:</label><br>
+        <input type="text" id="nomeUsuario">
+        <br><br>
+
+        <button onclick="salvarCookie()">Salvar dado</button>
+        <button onclick="mostrarCookie()">Mostrar cookies</button>
+
+        <p id="resultado-cookie"></p>
+
+        <p class="base-legal">
+            <strong>Base legal:</strong>
+            <a onclick="abrirModal('cookies')">
+                Consentimento do titular (art. 7º, I, LGPD)
+            </a>
+        </p>
+
+    </section>
+
+    <section id="banco">
+        <h2>🗄️ Banco de Dados</h2>
+
+        <p>
+            Bancos de dados armazenam grandes volumes de informações como cadastros, históricos de acesso e dados pessoais, 
+            sendo fundamentais para o funcionamento das plataformas digitais. 
+            Esses dados possuem valor econômico e exigem proteção jurídica. 
+            O tratamento desses dados deve respeitar os princípios da finalidade, necessidade e transparência, além de garantir a segurança e a proteção dos dados pessoais. 
+            A LGPD atribui responsabilidades aos controlador e ao operador dos dados, exigindo medidas de segurança para evitar 
+            vazamentos e usos indevidos, com possibilidade de responsabilização civil e administrativa.
+        </p>
+        <h3>Simulação de Banco de Dados</h3>
+
+        <label>Nome:</label><br>
+        <input type="text" id="bd-nome"><br><br>
+
+        <label>E-mail:</label><br>
+        <input type="email" id="bd-email"><br><br>
+
+        <label>Área de interesse:</label><br>
+        <input type="text" id="bd-interesse"><br><br>
+
+        <button onclick="salvarBanco()">Salvar no banco</button>
+        <button onclick="consultarBanco()">Consultar banco</button>
+
+        <p id="resultado-banco"></p>
+
+        <h3 class="alerta">🚨 SIMULAÇÃO DE VAZAMENTO DE DADOS</h3>
+
+        <button class="botao-alerta" onclick="simularVazamentoReal()">
+            Simular vazamento
+        </button>
+
+        <div id="vazamento-area"></div>
+
+        <p class="base-legal">
+            <strong>Base legal:</strong>
+            <a onclick="abrirModal('banco')">
+                Princípios da finalidade e necessidade (arts. 6º e 7º, LGPD)
+            </a>
+        </p>
+
+    </section>
+
+    <section id="marketing">
+        <h2>📢 Marketing Eletrônico</h2>
+
+        <p>
+            O marketing eletrônico utiliza dados coletados no ambiente digital para direcionar estratégias comerciais, 
+            permitindo campanhas personalizadas a partir do comportamento do usuário.
+            Esse uso depende de consentimento e transparência.
+            O marketing digital deve respeitar a LGPD e o Código de Defesa do Consumidor (CDC), 
+            evitando práticas abusivas, publicidade enganosa e violação à privacidade.
+        </p>
+
+        <h3>Simulação de Marketing Eletrônico</h3>
+        <button onclick="mostrarMarketing()">Ver anúncio personalizado</button>
+
+        <p id="resultado-marketing"></p>
+
+        <p class="base-legal">
+            <strong>Base legal:</strong>
+            <a onclick="abrirModal('marketing')">
+                Consentimento para finalidade publicitária
+            </a>
+        </p>
+
+    </section>
+
+    <section id="analise">
+        <h2>📚 Análise Jurídica do Projeto</h2>
+        <p>
+            O site demonstra, de forma prática, como o tratamento de dados pessoais
+            depende de consentimento, finalidade e base legal. 
+            A ética no tratamento de dados e a transparências fortalecem a confiança nas relações digitais, 
+            protegendo o consumidor e garantindo equilíbrio jurídico entre as partes. 
+        </p>
+        <p>
+            A ausência de consentimento impede o armazenamento, o acesso
+            e o uso econômico dos dados, reforçando os princípios da LGPD.
+        </p>
+
+        <h3>📊 Painel de Tratamento de Dados</h3>
         <ul>
-            <li>Cookies essenciais: garantem o funcionamento do site.</li>
-            <li>Cookies de preferência: armazenam preferências do usuário.</li>
-            <li>Cookies de análise: coletam dados sobre o comportamento do usuário.</li>
+            <li id="status-consentimento"></li>
+            <li id="status-cookie"></li>
+            <li id="status-banco"></li>
         </ul>
-            O uso de cookies depende do consentimento do usuário, conforme previsto na LGPD, e deve ser transparente quanto à finalidade e ao tratamento dos dados coletados.
-    </p>
 
-    <h3>Simulação de Consentimento</h3>
-    <button onclick="aceitarCookies()">Aceitar cookies</button>
-    <button onclick="recusarCookies()">Recusar cookies</button>
+        <button onclick="atualizarPainel()">Atualizar painel</button>
+    </section>
 
-    <h3>Simulação de Cookies</h3>
-
-    <label for="nomeUsuario">Digite seu nome:</label><br>
-    <input type="text" id="nomeUsuario">
-    <br><br>
-
-    <button onclick="salvarCookie()">Salvar dado</button>
-    <button onclick="mostrarCookie()">Mostrar cookies</button>
-
-    <p id="resultado-cookie"></p>
-
-    <p class="base-legal">
-        <strong>Base legal:</strong>
-        <a onclick="abrirModal('cookies')">
-            Consentimento do titular (art. 7º, I, LGPD)
-        </a>
-    </p>
-
-</section>
-
-<section id="banco">
-    <h2>🗄️ Banco de Dados</h2>
-
-    <p>
-        Bancos de dados armazenam informações pessoais de forma estruturada.
-        Esses dados possuem valor econômico e exigem proteção jurídica.
-    </p>
-    <h3>Simulação de Banco de Dados</h3>
-
-    <label>Nome:</label><br>
-    <input type="text" id="bd-nome"><br><br>
-
-    <label>E-mail:</label><br>
-    <input type="email" id="bd-email"><br><br>
-
-    <label>Área de interesse:</label><br>
-    <input type="text" id="bd-interesse"><br><br>
-
-    <button onclick="salvarBanco()">Salvar no banco</button>
-    <button onclick="consultarBanco()">Consultar banco</button>
-
-    <p id="resultado-banco"></p>
-
-    <h3 class="alerta">🚨 SIMULAÇÃO DE VAZAMENTO DE DADOS</h3>
-
-    <button class="botao-alerta" onclick="simularVazamentoReal()">
-        Simular vazamento
-    </button>
-
-    <div id="vazamento-area"></div>
-
-    <p class="base-legal">
-        <strong>Base legal:</strong>
-        <a onclick="abrirModal('banco')">
-            Princípios da finalidade e necessidade (arts. 6º e 7º, LGPD)
-        </a>
-    </p>
-
-</section>
-
-<section id="marketing">
-    <h2>📢 Marketing Eletrônico</h2>
-
-    <p>
-        O marketing digital utiliza dados pessoais para personalizar anúncios.
-        Esse uso depende de consentimento e transparência.
-    </p>
-
-    <h3>Simulação de Marketing Eletrônico</h3>
-    <button onclick="mostrarMarketing()">Ver anúncio personalizado</button>
-
-    <p id="resultado-marketing"></p>
-
-    <p class="base-legal">
-        <strong>Base legal:</strong>
-        <a onclick="abrirModal('marketing')">
-            Consentimento para finalidade publicitária
-        </a>
-    </p>
-
-</section>
-
-<section id="analise">
-    <h2>📚 Análise Jurídica do Projeto</h2>
-    <p>
-        O site demonstra, de forma prática, como o tratamento de dados pessoais
-        depende de consentimento, finalidade e base legal.
-    </p>
-    <p>
-        A ausência de consentimento impede o armazenamento, o acesso
-        e o uso econômico dos dados, reforçando os princípios da LGPD.
-    </p>
-
-    <h3>📊 Painel de Tratamento de Dados</h3>
-    <ul>
-        <li id="status-consentimento"></li>
-        <li id="status-cookie"></li>
-        <li id="status-banco"></li>
-    </ul>
-
-    <button onclick="atualizarPainel()">Atualizar painel</button>
-</section>
-
-<div id="modal-legal" class="modal">
-    <div class="modal-conteudo">
-        <span class="fechar" onclick="fecharModal()">&times;</span>
-        <h3 id="modal-titulo"></h3>
-        <p id="modal-texto"></p>
+    <div id="modal-legal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-texto"></p>
+        </div>
     </div>
-</div>
 
-<footer>
-    <p>Trabalho acadêmico – Direito Digital</p>
-</footer>
+    <footer>
+        <p>Trabalho acadêmico – Direito Digital</p>
+    </footer>
 
-<script src="script.js"></script>
-</body>
-</html>
+    <script src="script.js"></script>
+    </body>
+    </html>
