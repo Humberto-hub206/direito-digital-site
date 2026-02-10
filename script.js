@@ -116,16 +116,26 @@ function consultarBanco() {
 
 function mostrarMarketing() {
     const consentimento = localStorage.getItem("cookiesAceitos");
-    const nome = localStorage.getItem("cookieNome");
+    const dadosBanco = localStorage.getItem("bancoDados");
 
-    if (consentimento === "sim" && nome) {
+    if (consentimento !== "sim") {
         document.getElementById("resultado-marketing").innerText =
-            "Olá, " + nome + "! Veja cursos de Direito Digital recomendados para você.";
+            "Não é possível realizar marketing personalizado sem consentimento.";
+        return;
+    }
+
+    if (dadosBanco) {
+        const obj = JSON.parse(dadosBanco);
+
+        document.getElementById("resultado-marketing").innerText =
+            `Olá, ${obj.nome}! Com base no seu interesse em "${obj.interesse}",
+            selecionamos conteúdos e cursos relevantes para você.`;
     } else {
         document.getElementById("resultado-marketing").innerText =
-            "Não é possível personalizar anúncios sem consentimento.";
+            "Não há dados suficientes para personalização de marketing.";
     }
 }
+
 
 function atualizarPainel() {
     const consentimento = localStorage.getItem("cookiesAceitos");
@@ -149,25 +159,33 @@ function abrirModal(tipo) {
     if (tipo === "cookies") {
         titulo.innerText = "Art. 7º, I — Consentimento do Titular";
         texto.innerText =
-            "Art. 7º O tratamento de dados pessoais somente poderá ser realizado nas seguintes hipóteses:\n\n" +
+            "LGPD — Art. 7º, I:\n" +
+            "O tratamento de dados pessoais somente poderá ser realizado nas seguintes hipóteses:\n\n" +
             "I - mediante o fornecimento de consentimento pelo titular.";
     }
 
     if (tipo === "banco") {
         titulo.innerText = "Arts. 6º e 7º — Princípios e Base Legal";
         texto.innerText =
-            "Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:\n" +
+            "LGPD — Art. 6º:\n" +
+            "As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:\n" +
             "I - finalidade;\n" +
             "II - adequação;\n" +
             "III - necessidade.\n\n" +
-            "Art. 7º O tratamento de dados pessoais somente poderá ser realizado nas hipóteses legais previstas.";
+            "LGPD — Art. 7º, I:\n" +
+            "O tratamento de dados pessoais somente poderá ser realizado nas hipóteses legais previstas.";
     }
 
     if (tipo === "marketing") {
-        titulo.innerText = "Consentimento para Finalidade Publicitária";
-        texto.innerText =
-            "O uso de dados pessoais para fins de marketing exige consentimento específico, informado e destacado,\n" +
-            "conforme os princípios da finalidade e transparência previstos na LGPD.";
+    titulo.innerText = "Marketing Digital — Base Legal (LGPD e CDC)";
+    texto.innerText =
+        "LGPD — Art. 9º:\n" +
+        "O titular tem direito a informações claras sobre como seus dados\n" +
+        "são utilizados para fins publicitários.\n\n" +
+
+        "CDC — Art. 6º, III:\n" +
+        "O consumidor tem direito à informação adequada e clara sobre\n" +
+        "produtos, serviços e comunicações comerciais.";
     }
 
     document.getElementById("modal-legal").style.display = "block";
