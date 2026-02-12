@@ -6,10 +6,30 @@ body {
 }
 
 header {
-    background-color: #1e3a8a;
+    background-image: url("direitoDigital.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     color: white;
-    padding: 30px;
     text-align: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* escurece */
+}
+
+header * {
+    position: relative;
+    z-index: 1;
 }
 
 nav {
